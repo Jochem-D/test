@@ -27,28 +27,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-
-
-let poll = function () {
-    $.ajax({
-        url: "/notification/count",
-        success: function (data) {
-            $(".js-notifications").text(data);
-            if (data > 0) {
-                $(".js-notifications").addClass("animated");
-            }
-        },
-        error: function (xhr, error, status) {
-            if (401 === xhr.status) {
-                console.log('logged out', error, status);
-                location.href = '/login';
-            }
-        }
-    });
-};
-poll();
-window.notifications_poll = setInterval(poll, 15000);
-
 const app = new Vue({
     el: '#app',
     created() {
