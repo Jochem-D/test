@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateNotificationsTable extends Migration {
-
+    
     /**
      * Run the migrations.
      * @return void
@@ -20,7 +20,7 @@ class CreateNotificationsTable extends Migration {
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      * @return void

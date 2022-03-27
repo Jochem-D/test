@@ -8,6 +8,7 @@ use App\Models\Notification;
 class NotificationController extends Controller {
 
     public function index() {
+        $customer = $this->currentUser()->customer;
         $list = Notification::orderBy("created_at")->paginate(15);
         return view('notifications.index', ["notifications" => $list]);
     }
