@@ -5320,7 +5320,7 @@ Vue.component('example-component', (__webpack_require__(/*! ./components/Example
 var app = new Vue({
   el: '#app',
   created: function created() {
-    Echo["private"]('notifications').listen('MessageNotification', function (e) {
+    Echo.channel('notifications').listen('MessageNotification', function (e) {
       console.log('this should write to the console');
     });
   }
