@@ -32,7 +32,7 @@ const app = new Vue({
     created() {
         Echo.channel('notifications')
             .listen('MessageNotification', (e) => {
-                alert('this should give a pop up');
+                console.log('this should write to the console');
             });
     }
 });

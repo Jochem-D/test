@@ -33,6 +33,6 @@ class MessageNotification implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('notifications'.$this->notifications->id);
+        return new Channel('notifications');
     }
 }

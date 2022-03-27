@@ -5317,32 +5317,11 @@ Vue.component('example-component', (__webpack_require__(/*! ./components/Example
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var poll = function poll() {
-  $.ajax({
-    url: "/notification/count",
-    success: function success(data) {
-      $(".js-notifications").text(data);
-
-      if (data > 0) {
-        $(".js-notifications").addClass("animated");
-      }
-    },
-    error: function error(xhr, _error, status) {
-      if (401 === xhr.status) {
-        console.log('logged out', _error, status);
-        location.href = '/login';
-      }
-    }
-  });
-};
-
-poll();
-window.notifications_poll = setInterval(poll, 15000);
 var app = new Vue({
   el: '#app',
   created: function created() {
-    Echo.channel('notifications').listen('MessageNotification', function (e) {
-      alert('this should give a pop up');
+    Echo["private"]('notifications').listen('MessageNotification', function (e) {
+      console.log('this should write to the console');
     });
   }
 });
