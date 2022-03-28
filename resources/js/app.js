@@ -32,7 +32,9 @@ const app = new Vue({
     created() {
         Echo.channel('notifications')
             .listen('MessageNotification', (e) => {
-                console.log('this should write to the console');
+                //hier wil ik dat de counter uiteindelijk geupdate word via een event,
+                // maar dat event bestaat nog niet
+                alert('dit zou de counter moeten updaten');
             });
     }
 });
