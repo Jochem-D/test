@@ -27,15 +27,15 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-    created() {
-        Echo.channel('notifications')
-            .listen('MessageNotification', (e) => {
-                //hier wil ik dat de counter uiteindelijk geupdate word via een event,
-                // maar dat event bestaat nog niet
-
-                alert('dit zou de counter moeten updaten');
-            });
-    }
-});
+// const app = new Vue({
+//     el: '#app',
+//     created() {
+//         Echo.channel('notifications')
+//             .listen('MessageNotification', (e) => {
+//                 //hier wil ik dat de counter uiteindelijk geupdate word via een event,
+//                 // maar dat event bestaat nog niet
+//
+//                 alert('dit zou de counter moeten updaten');
+//             });
+//     }
+// });

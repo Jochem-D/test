@@ -40,8 +40,8 @@
         });
 
         const channel = pusher.subscribe('notifications');
-        channel.bind('App/Events/MessageNotification', function (data){
-            alert(JSON.stringify(data));
+        channel.bind('App\\Events\\MessageNotification', function (data){
+            poll();
         })
         // poll();
         // window.notifications_poll = setInterval(poll, 15000);

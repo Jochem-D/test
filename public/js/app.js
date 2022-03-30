@@ -5316,17 +5316,18 @@ Vue.component('example-component', (__webpack_require__(/*! ./components/Example
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-var app = new Vue({
-  el: '#app',
-  created: function created() {
-    Echo.channel('notifications').listen('MessageNotification', function (e) {
-      //hier wil ik dat de counter uiteindelijk geupdate word via een event,
-      // maar dat event bestaat nog niet
-      alert('dit zou de counter moeten updaten');
-    });
-  }
-});
+// const app = new Vue({
+//     el: '#app',
+//     created() {
+//         Echo.channel('notifications')
+//             .listen('MessageNotification', (e) => {
+//                 //hier wil ik dat de counter uiteindelijk geupdate word via een event,
+//                 // maar dat event bestaat nog niet
+//
+//                 alert('dit zou de counter moeten updaten');
+//             });
+//     }
+// });
 
 /***/ }),
 
