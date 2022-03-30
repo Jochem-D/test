@@ -34,6 +34,7 @@ const app = new Vue({
             .listen('MessageNotification', (e) => {
                 //hier wil ik dat de counter uiteindelijk geupdate word via een event,
                 // maar dat event bestaat nog niet
+
                 alert('dit zou de counter moeten updaten');
             });
     }

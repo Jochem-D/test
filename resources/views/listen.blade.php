@@ -1,5 +1,6 @@
 <html>
 <head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -16,5 +17,34 @@
 
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        let poll = function () {
+            $.ajax({
+                url: "/notifications/count",
+                success: function (data) {
+                    $(".js-notifications").text(data);
+                    if (data > 0) {
+                        $(".js-notifications").addClass("animated");    }
+                },
+                    error: function (xhr, error, status) {
+                    if (401 === xhr.status) {
+                        console.log('logged out', error, status);
+                        location.href = '/login';
+                    }
+                }
+            });
+        };
+        const pusher = new Pusher('98d2a1a0e8469f0666ce', {
+            cluster: 'eu',
+            forceTLS: true
+        });
+
+        const channel = pusher.subscribe('notifications');
+        channel.bind('App/Events/MessageNotification', function (data){
+            alert(JSON.stringify(data));
+        })
+        // poll();
+        // window.notifications_poll = setInterval(poll, 15000);
+    </script>
 </body>
 </html>

@@ -5321,7 +5321,9 @@ var app = new Vue({
   el: '#app',
   created: function created() {
     Echo.channel('notifications').listen('MessageNotification', function (e) {
-      console.log('this should write to the console');
+      //hier wil ik dat de counter uiteindelijk geupdate word via een event,
+      // maar dat event bestaat nog niet
+      alert('dit zou de counter moeten updaten');
     });
   }
 });
