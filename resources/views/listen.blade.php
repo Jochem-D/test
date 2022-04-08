@@ -42,9 +42,7 @@
         const channel = pusher.subscribe('notifications');
         channel.bind('App\\Events\\MessageNotification', function (data){
             poll();
-        })
-        // poll();
-        // window.notifications_poll = setInterval(poll, 15000);
+        });
     </script>
 </body>
 </html>
