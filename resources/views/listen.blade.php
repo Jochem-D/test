@@ -34,13 +34,14 @@
                 }
             });
         };
-        const pusher = new Pusher('98d2a1a0e8469f0666ce', {
+
+        const pusher = new Pusher('786789324', {
             cluster: 'eu',
             forceTLS: true
         });
 
         const channel = pusher.subscribe('notifications');
-        channel.bind('App\\Events\\MessageNotification', function (data){
+        channel.bind('MessageNotification', function (data){
             poll();
         });
     </script>
